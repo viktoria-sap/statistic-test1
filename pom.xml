@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.4.2</version>
+            <version>5.6.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -33,6 +33,11 @@
                     <failIfNoTests>true</failIfNoTests>
                 </configuration>
            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>3.1.12.2</version>
+            </plugin>
            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -54,6 +59,7 @@
                    </execution>
                    <execution>
                        <id>check</id>
+                       <phase>verify</phase>
                        <goals>
                            <goal>check</goal>
                        </goals>
